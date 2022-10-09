@@ -1,16 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.briansand.games</groupId>
 	<artifactId>rubix-cube</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Brian Sand's Amazing Rubix Cube</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>11</java.version>
+		<project.scm.id>fiserv-git</project.scm.id>
+
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+
+	<scm>
+		<url>https://github.com/Bsand006/Rubix-cube.git</url>
+		<connection>scm:git:https://github.com/Bsand006/Rubix-cube.git</connection>
+		<developerConnection>scm:git:https://github.com/Bsand006/Rubix-cube.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<repositories>
+		<repository>
+			<id>project-libs</id>
+			<name>project-libs</name>
+			<url>file://${project.basedir}/repo</url>
+		</repository>
+	</repositories>
+
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>11</release>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<release>${maven.compiler.target}</release>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -25,6 +54,21 @@
 			<groupId>org.jogamp.jogl</groupId>
 			<artifactId>jogl-all-main</artifactId>
 			<version>2.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jogamp</groupId>
+			<artifactId>vecmath</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jogamp.java3d</groupId>
+			<artifactId>java3d-core</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jogamp.java3d</groupId>
+			<artifactId>java3d-utils</artifactId>
+			<version>1.7.0</version>
 		</dependency>
 	</dependencies>
 </project>
